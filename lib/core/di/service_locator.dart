@@ -3,6 +3,8 @@ import 'package:digitera_task1/features/category/data/repository/category_reposi
 import 'package:digitera_task1/features/category/presentation/cubit/category_cubit.dart';
 import 'package:digitera_task1/features/home/data/repository/home_repository.dart';
 import 'package:digitera_task1/features/home/presentation/cubit/home_cubit.dart';
+import 'package:digitera_task1/features/register/data/repository/register_repository.dart';
+import 'package:digitera_task1/features/register/presentation/cubit/register_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -24,5 +26,12 @@ void setupServiceLocator() {
   );
   getIt.registerFactory<CategoryCubit>(
     () => CategoryCubit(getIt<CategoryRepository>()),
+  );
+
+  getIt.registerLazySingleton<RegisterRepository>(
+    () => RegisterRepository(getIt<Dio>()),
+  );
+  getIt.registerFactory<RegisterCubit>(
+    () => RegisterCubit(getIt<RegisterRepository>()),
   );
 }

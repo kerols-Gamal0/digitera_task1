@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:digitera_task1/core/routes/app_routes.dart';
+import 'package:digitera_task1/core/storage/app_preferences.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,11 +14,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future<void>.delayed(const Duration(milliseconds: 2200), () {
-      if (mounted) {
-        Navigator.pushReplacementNamed(context, AppRoutes.home);
-      }
-    });
+    _openNextScreen();
+  }
+
+  Future<void> _openNextScreen() async {
+    await Future<void>.delayed(const Duration(milliseconds: 2200));
+    final isLoggedIn = await AppPreferences.isLoggedIn();
+    if (!mounted) return;
+    Navigator.of(context).pushNamedAndRemoveUntil(
+      isLoggedIn ? AppRoutes.home : AppRoutes.register,
+      (route) => false,
+    );
   }
 
   @override

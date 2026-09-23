@@ -1,6 +1,7 @@
 import 'package:digitera_task1/core/routes/app_routes.dart';
 import 'package:digitera_task1/digitera.dart';
 import 'package:digitera_task1/features/category/presentation/ui/category_screen.dart';
+import 'package:digitera_task1/features/register/presentation/ui/register_screen.dart';
 import 'package:digitera_task1/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,11 @@ abstract final class AppRouter {
       case AppRoutes.home:
         return MaterialPageRoute<void>(
           builder: (_) => const AppScaffold(),
+          settings: settings,
+        );
+      case AppRoutes.register:
+        return MaterialPageRoute<void>(
+          builder: (_) => const RegisterScreen(),
           settings: settings,
         );
       default:

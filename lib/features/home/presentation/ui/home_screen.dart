@@ -1,4 +1,5 @@
 import 'package:digitera_task1/core/di/service_locator.dart';
+import 'package:digitera_task1/core/routes/app_routes.dart';
 import 'package:digitera_task1/features/home/data/model/product_model.dart';
 import 'package:digitera_task1/features/home/presentation/cubit/home_cubit.dart';
 import 'package:digitera_task1/features/home/presentation/cubit/home_state.dart';
@@ -41,8 +42,9 @@ class _HomeContentState extends State<_HomeContent> {
       title: const Text('Digitera Market'),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.shopping_bag_outlined),
+          onPressed: () => Navigator.pushNamed(context, AppRoutes.register),
+          icon: const Icon(Icons.person_add_alt_1_outlined),
+          tooltip: 'Create account',
         ),
       ],
     ),
