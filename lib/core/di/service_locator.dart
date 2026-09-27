@@ -1,4 +1,5 @@
 import 'package:digitera_task1/core/network/dio_module.dart';
+import 'package:digitera_task1/core/services/push_notification_service.dart';
 import 'package:digitera_task1/features/category/data/repository/category_repository.dart';
 import 'package:digitera_task1/features/category/presentation/cubit/category_cubit.dart';
 import 'package:digitera_task1/features/home/data/repository/home_repository.dart';
@@ -15,6 +16,11 @@ void setupServiceLocator() {
 
   final dio = DioModule().provideDio();
   getIt.registerSingleton<Dio>(dio);
+
+  // Push Notification Service
+  getIt.registerLazySingleton<PushNotificationService>(
+    () => PushNotificationService(),
+  );
 
   getIt.registerLazySingleton<HomeRepository>(
     () => HomeRepository(getIt<Dio>()),

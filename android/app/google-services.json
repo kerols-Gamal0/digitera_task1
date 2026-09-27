@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750851616194",
+    "project_id": "digitera-ca160",
+    "storage_bucket": "digitera-ca160.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750851616194:android:cf87d000b972c4f68a7a5b",
+        "android_client_info": {
+          "package_name": "com.example.digitera_task1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlU2-h_qIHiaWV2Tui_-02r9nJgGWBpoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
